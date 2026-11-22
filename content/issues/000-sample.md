@@ -60,4 +60,6 @@ Source: [The Crypto Basic, Nov 20](https://thecryptobasic.com/2026/11/20/tcb-dai
 - **Yield monitor.** Ten stablecoin lending rates next to the Treasury bill rate, every week.
 - **Regulation tracker.** What changed under US, EU and Swiss rules.
 
-*The 360 Brief is information, not investment advice. [Byline to be decided.]*
+By The DeFi360 Desk
+
+*The 360 Brief is information, not investment advice.*
