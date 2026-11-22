@@ -1,0 +1,9 @@
+// Cloudflare deployment settings for defi360.news.
+// The site is static: Cloudflare serves the files in ./site as they are.
+{
+  "name": "defi360",
+  "compatibility_date": "2026-11-22",
+  "assets": {
+    "directory": "./site"
+  }
+}
