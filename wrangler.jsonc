@@ -1,9 +1,18 @@
 // Cloudflare deployment settings for defi360.news.
-// The site is static: Cloudflare serves the files in ./site as they are.
+// Files in ./site are served as they are. Requests that do not match a file
+// (the /api/ routes) go to the script in src/worker.js.
 {
   "name": "defi360",
+  "main": "src/worker.js",
   "compatibility_date": "2026-11-22",
   "assets": {
-    "directory": "./site"
+    "directory": "./site",
+    "binding": "ASSETS"
+  },
+  // Plain settings. Secrets (RESEND_API_KEY, SIGNING_SECRET) are not kept
+  // here: add them in the Cloudflare dashboard or with `wrangler secret put`.
+  "vars": {
+    "SITE_URL": "https://defi360.news",
+    "FROM_ADDRESS": "The DeFi360 Desk <desk@mail.defi360.news>"
   }
 }

@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Silkscreen:wght@400;700&display=swap">
 <link rel="stylesheet" href="./styles.css">
 <script src="./theme.js"></script>
+<script src="./subscribe.js" defer></script>
 </head>
 <body>
 <div class="wrap">
@@ -34,15 +35,21 @@ DEFI360
 <p class="eyebrow">&gt; THE 360 BRIEF · EVERY FRIDAY</p>
 <h1>On-chain finance, read like a risk desk.</h1>
 <p class="lede">Five things that moved DeFi this week, and what each one means for risk, yield and regulation. Written for people who work in finance and don't follow crypto all day.</p>
-<!-- TODO(#8): replace this form with the beehiiv subscribe embed before launch. It does not submit anywhere yet. -->
-<form class="signup" action="#" method="post">
+<!-- Posts to the Worker in src/worker.js. Works without JavaScript; subscribe.js adds the inline message. -->
+<form class="signup" action="/api/subscribe" method="post">
 <div class="field">
 <label for="email">Email address</label>
 <input id="email" name="email" type="email" autocomplete="email" placeholder="you@firm.com" required>
 </div>
+<!-- Hidden from people. Bots fill it in, and the Worker drops those sign-ups. -->
+<div class="trap" aria-hidden="true">
+<label for="company">Leave this field empty</label>
+<input id="company" name="company" type="text" tabindex="-1" autocomplete="off">
+</div>
 <button class="button" type="submit">SUBSCRIBE</button>
 </form>
-<p class="fineprint">Free. One email a week. Unsubscribe any time.</p>
+<p class="signup-status" role="status" aria-live="polite" hidden></p>
+<p class="fineprint">Free. One email a week. Unsubscribe any time. We email you a link to confirm.</p>
 </section>
 </main>
 

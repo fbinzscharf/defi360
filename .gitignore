@@ -1,0 +1,4 @@
+# Local Cloudflare state and local-only secrets
+.wrangler/
+.dev.vars
+node_modules/
